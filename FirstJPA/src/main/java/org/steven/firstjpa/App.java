@@ -15,10 +15,16 @@ public class App {
 
         entityManager.getTransaction().begin();
 
-        Student student = new Student("AAA", 40);
+        //Student student = new Student("AAA", 40);
+        //Person person = new Person("Kevin", "kevin@gmail.com");
+
+        // get
+        Person person = entityManager.find(Person.class, 1);
+        System.out.println(person);
+
 
         // insert student into database
-        entityManager.persist(student);
+        entityManager.persist(person);
         entityManager.getTransaction().commit();
 
         // close
